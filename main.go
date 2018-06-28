@@ -6,12 +6,12 @@ import (
 
 	gohttp "net/http"
 
+	"github.com/ZipRecruiter/MailHog-UI/assets"
+	"github.com/ZipRecruiter/MailHog-UI/config"
+	"github.com/ZipRecruiter/MailHog-UI/web"
+	comcfg "github.com/ZipRecruiter/MailHog/config"
 	"github.com/gorilla/pat"
 	"github.com/ian-kent/go-log/log"
-	"github.com/mailhog/MailHog-UI/assets"
-	"github.com/mailhog/MailHog-UI/config"
-	"github.com/mailhog/MailHog-UI/web"
-	comcfg "github.com/mailhog/MailHog/config"
 	"github.com/mailhog/http"
 )
 

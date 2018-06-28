@@ -323,7 +323,8 @@ mailhogApp.controller('MailCtrl', function ($scope, $http, $sce, $timeout) {
   }
 
   $scope.refreshSearch = function() {
-    var url = $scope.host + 'api/v2/search?kind=' + $scope.searchKind + '&query=' + $scope.searchedText;
+    var url = $scope.host + 'api/v2/search?kind=' + $scope.searchKind +
+      '&query=' + encodeURIComponent($scope.searchedText);
     if($scope.startIndex > 0) {
       url += "&start=" + $scope.startIndex;
     }

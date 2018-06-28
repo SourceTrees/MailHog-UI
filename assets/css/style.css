@@ -160,3 +160,24 @@
 .mime-part {
   padding: 10px;
 }
+
+[ng-if="searching"] {
+   float: left;
+   margin-right: 41vw;
+}
+
+[ng-if="searching"] ~ [ng-if="preview"] {
+   width: 40vw;
+}
+
+[ng-if="searching"] ~ [ng-if="preview"].toolbar {
+   position: fixed;
+   top: 50px;
+   right: 20px;
+}
+
+[ng-if="searching"] ~ [ng-if="preview"].preview {
+   position: fixed;
+   top: 100px;
+   right: 20px;
+}

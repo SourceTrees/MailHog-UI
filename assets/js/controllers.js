@@ -181,7 +181,11 @@ mailhogApp.controller('MailCtrl', function ($scope, $http, $sce, $timeout) {
     });
   }
 
-  $scope.tryDecodeMime = function(str) {
+  $scope.tryDecodeMime = function(str, contentType = '') {
+    if (contentType != '' && contentType.indexOf('charset') !== -1) {
+      var charset = contentType.split('charset=').pop();
+      return unescapeFromMime('=?' + charset.toUpperCase() + '?Q?' + str + '?=')
+    }
     return unescapeFromMime(str)
   }
 
@@ -524,7 +528,7 @@ mailhogApp.controller('MailCtrl', function ($scope, $http, $sce, $timeout) {
     if(l.Headers && l.Headers["Content-Type"] && l.Headers["Content-Transfer-Encoding"]){
       return $scope.tryDecodeContent({Content:l});
     }else{
-      return l.Body;
+      return $scope.tryDecodeMime(l.Body, l.Headers["Content-Type"][0]);
     }
   };
   $scope.date = function(timestamp) {

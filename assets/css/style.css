@@ -181,3 +181,16 @@
    top: 100px;
    right: 20px;
 }
+
+a.subject:link {
+  color: #337ab7 !important;
+  font-weight: bold !important;
+}
+
+a.subject:hover {
+  color: #00FF00 !important;
+}
+
+a.subject:visited {
+  color: #CCC !important;
+}

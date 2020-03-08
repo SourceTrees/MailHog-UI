@@ -609,4 +609,8 @@ mailhogApp.controller('MailCtrl', function ($scope, $http, $sce, $timeout) {
       e.done();
   	});
   }
+
+  $scope.encodeCrc32 = function(str) {
+    return crc32(str)
+  }
 });
